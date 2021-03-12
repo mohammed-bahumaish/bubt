@@ -1,65 +1,87 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { useGesture } from "react-use-gesture";
+import { useRef, useState, useEffect } from "react";
+import { motion, useMotionValue, useCycle } from "framer-motion";
+import Particles from "react-particles-js";
 
-export default function Home() {
+export default function Home({ dimensions }) {
+  console.log(dimensions.height);
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <div className="bg-yellow-600 h-screen w-screen fixed">
+        <motion.div
+          initial={{ y: 277, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1, duration: 2.5 }}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+          <motion.div
+            animate={{ x: [0, 3, 0], transition: { loop: Infinity } }}
+          >
+            <Particles
+              params={{
+                particles: {
+                  number: {
+                    value: 100,
+                    density: {
+                      enable: false,
+                    },
+                  },
+                  size: {
+                    value: 10,
+                    random: true,
+                    anim: {
+                      speed: 0.7,
+                      size_min: 0.3,
+                      startValue: "max",
+                      enable: true,
+                      destroy: "max",
+                    },
+                  },
+                  line_linked: {
+                    enable: false,
+                  },
+                  move: {
+                    enable: true,
+                    speed: 1.5,
+                    direction: "top",
+                    out_mode: "out",
+                    random: true,
+                    collisions: false,
+                    straight: true,
+                    angle: {
+                      value: 50,
+                      offset: 50,
+                    },
+                  },
+                },
+                interactivity: {
+                  events: {
+                    onhover: {
+                      enable: false,
+                      mode: "bubble",
+                    },
+                    onclick: {
+                      enable: false,
+                      mode: "repulse",
+                    },
+                  },
+                  // modes: {
+                  //   bubble: {
+                  //     distance: 250,
+                  //     duration: 2,
+                  //     size: 10,
+                  //     opacity: 0,
+                  //   },
+                  //   repulse: {
+                  //     distance: 400,
+                  //     duration: 4,
+                  //   },
+                  // },
+                },
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+    </>
+  );
 }
