@@ -3,8 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useCycle } from "framer-motion";
 import Particles from "react-particles-js";
 
-export default function Home({ dimensions }) {
-  console.log(dimensions.height);
+export default function Home() {
   return (
     <>
       <div className="bg-yellow-600 h-screen w-screen fixed">
