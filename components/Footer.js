@@ -90,8 +90,8 @@ const FruitFizz = ({ step, transitions }) => {
               class="rounded-full  w-full"
               placeholder="EMAIL"
             />
-            <button className="bg-gray-900 rounded-full text-white w-52  ml-3 font-bold">
-              SEND
+            <button className="bg-gray-900 rounded-full text-white w-52  ml-3 font-bold uppercase">
+              subscribe
             </button>
           </div>
         </motion.div>
