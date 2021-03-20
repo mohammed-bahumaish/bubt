@@ -6,7 +6,9 @@ const FruitFizz = ({ step, transitions }) => {
       className="h-full w-full flex justify-center items-center flex-col"
       transition={{ duration: 0.5, ease: "anticipate" }}
       key="Footer"
-      exit={{ y: 1000, opacity: 0 }}
+      exit={{ y: 100, opacity: 0 }}
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
     >
       <motion.div
         className="w-36 h-36 bg-white rounded-full absolute top-1/2 left-1/2 z-30 flex justify-center items-center cursor-pointer"
@@ -16,11 +18,11 @@ const FruitFizz = ({ step, transitions }) => {
           transition: { duration: 0.3, ease: "anticipate" },
         }}
         whileTap={{ scale: 1 }}
-        initial={{ y: -1000, opacity: 0 }}
+        initial={{ y: 100, opacity: 0 }}
         animate={{
           y: 0,
           opacity: 1,
-          transition: { delay: 1, duration: 0.8, ease: "anticipate" },
+          transition: { delay: 0.2, duration: 0.8, ease: "anticipate" },
         }}
         key="Footer1"
       >
@@ -30,9 +32,6 @@ const FruitFizz = ({ step, transitions }) => {
         <div className="flex-1 ">
           <motion.div
             className="h-full w-full flex justify-center items-center"
-            initial={{ y: 1000, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0, duration: 0.8, ease: "anticipate" }}
             style={{ backgroundColor: "#e23642" }}
             key="Footer2"
           >
@@ -53,9 +52,6 @@ const FruitFizz = ({ step, transitions }) => {
         <div className="flex-1">
           <motion.div
             className="h-full w-full flex justify-center items-center"
-            initial={{ y: 1000, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8, ease: "anticipate" }}
             style={{ backgroundColor: "#f5851d" }}
             key="Footer3"
           >
@@ -76,12 +72,29 @@ const FruitFizz = ({ step, transitions }) => {
       </div>
       <div className="h-36 w-full" key="52footer">
         <motion.div
-          className="h-full w-full bg-white"
-          initial={{ y: 1000, opacity: 0 }}
+          className="h-full w-full bg-white text-center flex flex-col justify-center items-center"
+          initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.8, ease: "anticipate" }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "anticipate" }}
           key="Footer4"
-        ></motion.div>
+        >
+          <p className="mb-3 text-lg font-bold">
+            subscribe to out newsletter. you can always be up to date with our
+            ashaanfood news!
+          </p>
+          <div className="flex w-96 h-10">
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="rounded-full  w-full"
+              placeholder="EMAIL"
+            />
+            <button className="bg-gray-900 rounded-full text-white w-52  ml-3 font-bold">
+              SEND
+            </button>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );

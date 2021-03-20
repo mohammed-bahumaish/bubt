@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Header = ({ show }) => {
   return (
@@ -12,18 +13,26 @@ const Header = ({ show }) => {
     >
       <div className="flex justify-around items-centers w-full font-extrabold text-xl">
         <div className="flex-1 text-center  font-extrabold lg:text-xl md:text-lg text-base">
-          PRODUCTS
+          <Link href="/products">
+            <a>PRODUCTS</a>
+          </Link>
         </div>
         <div className="flex-1 text-center font-extrabold lg:text-xl md:text-lg text-base">
-          ABOUT US
+          <Link href="/franchise">
+            <a>FRANCHISE</a>
+          </Link>
         </div>
         <div className="flex-auto text-center">
           <motion.div
             className=" flex justify-center items-center flex-col"
             style={{ marginTop: -70 }}
           >
-            <img src="/logo.svg" alt="" className="lg:w-44 w-32" />
-            <p className="font-normal text-lg -mt-9">by ASHAAN FOOD</p>
+            <Link href="/">
+              <a>
+                <img src="/logo.svg" alt="" className="lg:w-44 w-32" />
+                <p className="font-extrabold text-base -mt-9">by ASHAAN FOOD</p>
+              </a>
+            </Link>
           </motion.div>
         </div>
         <div className="flex-1 text-center font-extrabold lg:text-xl md:text-lg text-base">
