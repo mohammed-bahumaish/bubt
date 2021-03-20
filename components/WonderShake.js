@@ -42,7 +42,7 @@ const WonderShake = ({ step, transitions }) => {
         </motion.div>
 
         <motion.div
-          className="lg:w-1/4 w-80 md:w-80 z-10 max-h-screen md:ml-20"
+          className="lg:w-3/6 w-80 md:w-80 z-10 max-h-screen md:ml-20"
           initial={
             transitions.previousStep == 2
               ? { x: 1000, opacity: 0 }
@@ -55,11 +55,12 @@ const WonderShake = ({ step, transitions }) => {
             // delay: 0.2,
           }}
           key="32"
+     
         >
           <motion.img
             src="/milkshake.png"
             alt=""
-            style={{}}
+     
             animate={{
               y: [0, 6, 3, 0],
               rotateZ: [0, 1, -0.5, 0],

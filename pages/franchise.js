@@ -12,8 +12,8 @@ const Products = () => {
   useGesture(
     {
       onWheel: ({ vxvy: [, vy], movement: [x, y] }) => {
-        if (y > 125 && vy > 0) setShowHeader(false);
-        else if (y < -125 && vy < 0) setShowHeader(true);
+        if (y >1) setShowHeader(false);
+        else if (y < -1) setShowHeader(true);
       },
     },
     {
