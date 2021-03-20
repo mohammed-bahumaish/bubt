@@ -57,7 +57,7 @@ const Shawarma = ({ step, transitions }) => {
           key="62"
         >
           <motion.img
-            src="/Shawarma.png"
+            src="/shawarma.png"
             alt=""
             style={{}}
             animate={{
