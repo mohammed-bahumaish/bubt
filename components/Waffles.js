@@ -15,7 +15,7 @@ const Waffles = ({ step, transitions }) => {
       <div className="flex-" style={{ flex: 3 }}></div>
       <div className="flex-auto w-screen justify-center items-center flex flex-row">
         <motion.div
-          className="text-gray-50 lg:text-9xl md:text-8xl text-6xl absolute z-20 font-extrabold"
+          className="text-gray-100 lg:text-9xl md:text-8xl text-6xl absolute z-20 font-extrabold"
           initial={
             transitions.previousStep == 4
               ? { x: 1000, opacity: 0 }

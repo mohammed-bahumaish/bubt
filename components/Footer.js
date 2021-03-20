@@ -15,7 +15,7 @@ const FruitFizz = ({ step, transitions }) => {
           scale: 1.1,
           transition: { duration: 0.3, ease: "anticipate" },
         }}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ scale: 1 }}
         initial={{ y: -1000, opacity: 0 }}
         animate={{
           y: 0,
@@ -45,7 +45,7 @@ const FruitFizz = ({ step, transitions }) => {
                 scale: 1.1,
                 transition: { duration: 0.3, ease: "anticipate" },
               }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 1 }}
               key="Footer21"
             />
           </motion.div>
