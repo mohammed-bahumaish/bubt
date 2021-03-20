@@ -21,6 +21,7 @@ export default function Home() {
   });
   const [introExited, setintroExited] = useState(false);
   const [step, setStep] = useState(0);
+  const [showHeader, setShowHeader] = useState(true);
 
   useEffect(() => {
     _window.current = window;
@@ -46,14 +47,14 @@ export default function Home() {
     }
   );
 
-  console.log("rerender");
-
   const nextStep = useRef(
     throttle(
       (a) => {
         if (a == 1) {
           setStep((v) => {
             setTransation({ ...transitions, previousStep: v, nextStep: v + 1 });
+            setShowHeader(false);
+
             return v;
           });
           setTimeout(() => {
@@ -65,6 +66,8 @@ export default function Home() {
         } else if (a == -1) {
           setStep((v) => {
             setTransation({ ...transitions, previousStep: v, nextStep: v - 1 });
+            setShowHeader(true);
+
             return v;
           });
           setTimeout(() => {
@@ -90,7 +93,7 @@ export default function Home() {
           "radial-gradient(circle, rgba(255,255,255,0.3337710084033614) 0%, rgba(89,199,115,0) 39%, rgba(0,0,0,0.3477766106442577) 100%)",
       }}
     >
-      <Header show={true} />
+      <Header show={showHeader} />
       <motion.div
         className="h-screen w-screen"
         animate={

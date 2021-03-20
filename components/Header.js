@@ -19,10 +19,11 @@ const Header = ({ show }) => {
         </div>
         <div className="flex-auto text-center">
           <motion.div
-            className=" flex justify-center items-center"
+            className=" flex justify-center items-center flex-col"
             style={{ marginTop: -70 }}
           >
-            <img src="/logo.svg" alt="" className="lg:w-36 w-32" />
+            <img src="/logo.svg" alt="" className="lg:w-44 w-32" />
+            <p className="font-normal text-lg -mt-9">by ASHAAN FOOD</p>
           </motion.div>
         </div>
         <div className="flex-1 text-center font-extrabold lg:text-xl md:text-lg text-base">
