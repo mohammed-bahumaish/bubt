@@ -8,7 +8,7 @@ const Header = ({ show }) => {
       initial={{ y: -200 }}
       animate={{
         y: show ? 0 : 0 - 200,
-        transition: { duration: 0.7, ease: "easeInOut", delay: 0.5 },
+        transition: { duration: 0.4, ease: "easeInOut" },
       }}
     >
       <div className="flex justify-around items-centers w-full font-extrabold text-xl">
