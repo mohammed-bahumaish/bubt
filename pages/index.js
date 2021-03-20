@@ -199,7 +199,7 @@ const pushBubble = ({ quantity, duration }) => {
   for (let index = 0; index < quantity; index++) {
     const bub = document.createElement("div");
     const container = document.getElementById("container");
-    container.appendChild(bub);
+    container?.appendChild(bub);
     ReactDom.render(
       <BubleMemoized
         props={{

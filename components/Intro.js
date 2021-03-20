@@ -110,7 +110,7 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
           }
         >
           <motion.div
-            className="lg:w-1/4 w-80 md:w-80 z-10 max-h-screen md:ml-20"
+            className="lg:w-96 w-80 md:w-80 z-10 max-h-screen md:ml-20"
             initial={
               !introExited
                 ? { y: 700 }
@@ -136,7 +136,6 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
             <motion.img
               src="/bubt.png"
               alt=""
-              style={{}}
               animate={{
                 y: [0, 6, 3, 0],
                 rotateZ: [0, 1, -0.5, 0],
