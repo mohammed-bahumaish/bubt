@@ -82,36 +82,11 @@ const Products = () => {
             </p>
           </div>
 
-          <div className="m-5 mt-16">
-            <p className="uppercase text-xl font-extrabold">
-              bub fizz with bubble fruit pearls
-            </p>
-            <div class="grid grid-flow-row grid-cols-3 gap-4 ">
-              <GridNode
-                bgColor="#D22819"
-                url="STRAWBERRY"
-                name="STRAWBERRY"
-                content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
-                }
-              />
-              <GridNode
-                bgColor="#D22819"
-                url="STRAWBERRY"
-                name="STRAWBERRY"
-                content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
-                }
-              />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-            </div>
-          </div>
+          
 
           <div className="m-5 mt-16">
             <p className="uppercase text-xl font-extrabold">
-              BLACK NATURAL TEA WITH BUB-T (BOBA) BLACK PEARL
+            MILK TEA WITH BUBBLE (BOBA) BLACK PEARL
             </p>
             <div class="grid grid-flow-row grid-cols-3 gap-4 ">
               <GridNode
@@ -164,6 +139,33 @@ const Products = () => {
               />
               <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
               <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
+              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
+              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
+              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
+            </div>
+          </div>
+
+          <div className="m-5 mt-16">
+            <p className="uppercase text-xl font-extrabold">
+              bub fizz with bubble fruit pearls
+            </p>
+            <div class="grid grid-flow-row grid-cols-3 gap-4 ">
+              <GridNode
+                bgColor="#D22819"
+                url="STRAWBERRY"
+                name="STRAWBERRY"
+                content={
+                  <DrinksContent name="strawberry" price1="150" price2="170" />
+                }
+              />
+              <GridNode
+                bgColor="#D22819"
+                url="STRAWBERRY"
+                name="STRAWBERRY"
+                content={
+                  <DrinksContent name="strawberry" price1="150" price2="170" />
+                }
+              />
               <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
               <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
               <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
