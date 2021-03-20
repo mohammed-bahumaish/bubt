@@ -37,7 +37,7 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
         <AnimatePresence>
           {step == 2 && (
             <motion.div
-              className="text-gray-900 lg:text-9xl md:text-8xl text-6xl absolute z-20 font-extrabold"
+              className="text-gray-900 lg:text-8xl md:text-7xl text-6xl absolute z-20 font-extrabold"
               initial={
                 transitions.previousStep == 1
                   ? { x: 1000, opacity: 0 }
@@ -65,7 +65,7 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
                   repeat: Infinity,
                 }}
               >
-                BUB-T BOBA
+                BUB-T
               </motion.p>
             </motion.div>
           )}
