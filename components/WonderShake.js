@@ -1,10 +1,19 @@
-import { motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
+import { durations } from "../pages/index";
+import { useEffect } from "react";
 
 const WonderShake = ({ step, transitions }) => {
+  const [typeStep, nextType] = useCycle(1, 2, 3, 4, 5);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextType();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <motion.div
       className="h-full w-full flex justify-center items-center flex-col"
-      transition={{ duration: 0.5, ease: "anticipate" }}
+      transition={{ duration: durations.exitDuration, ease: "anticipate" }}
       key="milkShake"
       exit={
         transitions.nextStep == 2
@@ -15,7 +24,7 @@ const WonderShake = ({ step, transitions }) => {
       <div className="flex-" style={{ flex: 3 }}></div>
       <div className="flex-auto w-screen justify-center items-center flex flex-row">
         <motion.div
-          className="text-gray-50 lg:text-9xl md:text-8xl text-6xl absolute z-20 font-extrabold"
+          className="text-gray-50 lg:text-8xl md:text-8xl text-7xl absolute z-20 font-extrabold"
           initial={
             transitions.previousStep == 2
               ? { x: 1000, opacity: 0 }
@@ -23,8 +32,8 @@ const WonderShake = ({ step, transitions }) => {
           }
           animate={{ x: -100, opacity: 1 }}
           transition={{
-            duration: 0.8,
-            delay: 0.4,
+            duration: durations.titleDuration,
+            delay: durations.titleDelay,
             ease: "anticipate",
           }}
           key="31"
@@ -42,7 +51,7 @@ const WonderShake = ({ step, transitions }) => {
         </motion.div>
 
         <motion.div
-          className="lg:w-3/6 w-80 md:w-80 z-10 max-h-screen md:ml-20"
+          className="cup"
           initial={
             transitions.previousStep == 2
               ? { x: 1000, opacity: 0 }
@@ -50,25 +59,25 @@ const WonderShake = ({ step, transitions }) => {
           }
           animate={{ x: 0, opacity: 1 }}
           transition={{
-            duration: 0.8,
+            duration: durations.cupDuration,
             ease: "anticipate",
-            // delay: 0.2,
+            delay: durations.cupDelay,
           }}
           key="32"
-     
         >
-          <motion.img
-            src="/milkshake.png"
-            alt=""
-     
-            animate={{
-              y: [0, 6, 3, 0],
-              rotateZ: [0, 1, -0.5, 0],
-            }}
-            transition={{ repeat: Infinity, duration: 5 }}
-            className=" max-h-screen"
-            key="321"
-          />
+          {typeStep == 1 ? (
+            <Type title="BLACKBERRY" url="BLACKBERRY-min" />
+          ) : typeStep == 2 ? (
+            <Type title="BUTTER SCOTCH" url="BUTTER SCOTCH-min" />
+          ) : typeStep == 3 ? (
+            <Type title="CHOCOLATE" url="CHOCOLATE-min" />
+          ) : typeStep == 4 ? (
+            <Type title="KIWI" url="KIWI-min" />
+          ) : typeStep == 5 ? (
+            <Type title="STRAWBERY" url="STRAWBERY-min" />
+          ) : (
+            typeStep == 6 && <Type title="VANILA" url="VANILA-min" />
+          )}
         </motion.div>
       </div>
       <div className="flex-1"></div>
@@ -77,3 +86,22 @@ const WonderShake = ({ step, transitions }) => {
 };
 
 export default WonderShake;
+
+const Type = ({ url, title }) => {
+  return (
+    <>
+      <motion.img
+        src={`/wonder/${url}.png`}
+        alt=""
+        animate={{
+          y: [0, 6, 3, 0],
+          rotateZ: [0, 1, -0.5, 0],
+        }}
+        transition={{ repeat: Infinity, duration: 5 }}
+        className=" max-h-screen "
+        key="421"
+      />
+      <p className="text-xl font-extrabold text-gray-50 m-3">{title}</p>
+    </>
+  );
+};

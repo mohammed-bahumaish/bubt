@@ -1,15 +1,22 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useCycle } from "framer-motion";
+import { durations } from "../pages/index";
+import { useEffect } from "react";
 
 const Intro = ({ step, transitions, introExited, setintroExited }) => {
+  const [typeStep, nextType] = useCycle(1, 2, 3, 4, 5, 6);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextType();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <motion.div
       className="h-full w-full flex justify-center items-center flex-col"
       exit={{ x: -1000, opacity: 0 }}
-      transition={{ duration: 0.5, ease: "anticipate" }}
+      transition={{ duration: durations.exitDuration, ease: "anticipate" }}
       key="milkShake"
-      onAnimationComplete={() => {
-        if (!introExited) setintroExited(true);
-      }}
     >
       <div className="flex-" style={{ flex: 3 }}></div>
       <div className="flex-auto w-screen justify-center items-center flex flex-row">
@@ -68,7 +75,7 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
         <AnimatePresence>
           {step == 2 && (
             <motion.div
-              className="text-gray-900 lg:text-8xl md:text-7xl text-6xl absolute z-20 font-extrabold"
+              className="text-gray-900 lg:text-8xl md:text-8xl text-7xl absolute z-20 font-extrabold"
               initial={
                 transitions.previousStep == 1
                   ? { x: 1000, opacity: 0 }
@@ -76,9 +83,10 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
               }
               animate={{ x: -100, opacity: 1 }}
               transition={{
-                duration: 0.8,
+                duration: durations.titleDuration,
                 ease: "anticipate",
-                delay: transitions.previousStep == 3 ? 0.4 : 0.2,
+                delay:
+                  transitions.previousStep == 3 ? durations.titleDelay : 0.2,
               }}
               exit={{
                 x: 1000,
@@ -110,7 +118,7 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
           }
         >
           <motion.div
-            className="lg:w-96 w-80 md:w-80 z-10 max-h-screen md:ml-20"
+            className="cup"
             initial={
               !introExited
                 ? { y: 700 }
@@ -124,25 +132,34 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
                 : { x: 0, y: step != 1 ? -20 : 0, opacity: 1 }
             }
             transition={{
-              duration: 0.8,
+              duration: durations.cupDuration,
               ease: "anticipate",
+              delay: durations.cupDelay,
             }}
             style={
               [0, 1].includes(step) ? { marginRight: 100 } : { marginRight: 0 }
             }
             key="12"
             layout
+            onAnimationComplete={() => {
+              if (!introExited) setintroExited(true);
+            }}
           >
-            <motion.img
-              src="/bubt.png"
-              alt=""
-              animate={{
-                y: [0, 6, 3, 0],
-                rotateZ: [0, 1, -0.5, 0],
-              }}
-              transition={{ repeat: Infinity, duration: 5 }}
-              className=" max-h-screen"
-            />
+            {step < 2 ? (
+              <Type title="." url="BUBt-min" />
+            ) : typeStep == 1 ? (
+              <Type title="BUB-T" url="BUBt-min" />
+            ) : typeStep == 2 ? (
+              <Type title="GINGER TEA" url="GINGER TEA-min" />
+            ) : typeStep == 3 ? (
+              <Type title="GREEN APPLE TEA" url="GREEN APPLE TEA-min" />
+            ) : typeStep == 4 ? (
+              <Type title="ORININAL INDIA TEA" url="ORININAL INDIA TEA-min" />
+            ) : typeStep == 5 ? (
+              <Type title="MINT TEA" url="MINT TEA-min" />
+            ) : (
+              typeStep == 6 && <Type title="PEACH TEA" url="PEACH TEA-min" />
+            )}
           </motion.div>
         </motion.div>
       </div>
@@ -152,3 +169,22 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
 };
 
 export default Intro;
+
+const Type = ({ url, title }) => {
+  return (
+    <>
+      <motion.img
+        src={`/bubt/${url}.png`}
+        alt=""
+        animate={{
+          y: [0, 6, 3, 0],
+          rotateZ: [0, 1, -0.5, 0],
+        }}
+        transition={{ repeat: Infinity, duration: 5 }}
+        className=" max-h-screen "
+        key="421"
+      />
+      <p className="text-xl font-extrabold text-gray-50 m-3">{title}</p>
+    </>
+  );
+};

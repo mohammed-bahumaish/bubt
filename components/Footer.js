@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { durations } from "../pages/index";
 
 const FruitFizz = ({ step, transitions }) => {
   return (
     <motion.div
       className="h-full w-full flex justify-center items-center flex-col"
-      transition={{ duration: 0.5, ease: "anticipate" }}
+      transition={{ duration: 0.2 }}
       key="Footer"
       exit={{ y: 100, opacity: 0 }}
       initial={{ y: 100, opacity: 0 }}

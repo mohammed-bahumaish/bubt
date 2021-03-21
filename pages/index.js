@@ -11,7 +11,7 @@ import FruitFizz from "../components/FruitFizz";
 import Waffles from "../components/Waffles";
 import Shawarma from "../components/Shawarma";
 import Footer from "../components/Footer";
-import {fastBubs,pushBubble} from '../components/Bub'
+import { fastBubs, pushBubble } from "../components/Bub";
 
 export default function Home() {
   const _window = useRef(null);
@@ -34,8 +34,7 @@ export default function Home() {
         duration: 7,
       });
     }, 1500);
-    return ()=>clearInterval(interval)
-
+    return () => clearInterval(interval);
   }, []);
 
   useGesture(
@@ -157,8 +156,11 @@ export default function Home() {
     </div>
   );
 }
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
-}
+
+export const durations = {
+  cupDuration: 0.4,
+  cupDelay: 0,
+  titleDuration: 0.6,
+  titleDelay: 0.2,
+  exitDuration: 0.4,
+};

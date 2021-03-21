@@ -1,17 +1,19 @@
 import { motion, useCycle } from "framer-motion";
 import { useEffect } from "react";
+import { durations } from "../pages/index";
 
 const FruitFizz = ({ transitions }) => {
   const [typeStep, nextType] = useCycle(1, 2, 3, 4, 5);
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       nextType();
-    }, 1500);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
   return (
     <motion.div
       className="h-full w-full flex justify-center items-center flex-col"
-      transition={{ duration: 0.5, ease: "anticipate" }}
+      transition={{ duration: durations.exitDuration, ease: "anticipate" }}
       key="fruitFizz"
       exit={
         transitions.nextStep == 3
@@ -22,7 +24,7 @@ const FruitFizz = ({ transitions }) => {
       <div className="flex-" style={{ flex: 3 }}></div>
       <div className="flex-auto w-screen justify-center items-center flex flex-row">
         <motion.div
-          className="text-gray-50 lg:text-9xl md:text-8xl text-6xl absolute z-20 font-extrabold"
+          className="text-gray-50 lg:text-8xl md:text-8xl text-7xl absolute z-20 font-extrabold"
           initial={
             transitions.previousStep == 3
               ? { x: 1000, opacity: 0 }
@@ -30,8 +32,8 @@ const FruitFizz = ({ transitions }) => {
           }
           animate={{ x: -100, opacity: 1, y: 0 }}
           transition={{
-            duration: 0.8,
-            delay: 0.4,
+            duration: durations.titleDuration,
+            delay: durations.titleDelay,
             ease: "anticipate",
           }}
           key="41"
@@ -49,7 +51,8 @@ const FruitFizz = ({ transitions }) => {
         </motion.div>
 
         <motion.div
-          className="lg:w-1/4 w-80 md:w-80 z-10 max-h-screen md:ml-20"
+          // className="lg:w-1/4 w-80 md:w-80 z-10 max-h-screen md:ml-20"
+          className="cup"
           initial={
             transitions.previousStep == 3
               ? { x: 1000, opacity: 0 }
@@ -57,9 +60,9 @@ const FruitFizz = ({ transitions }) => {
           }
           animate={{ x: 0, opacity: 1, y: 0 }}
           transition={{
-            duration: 0.8,
+            duration: durations.cupDuration,
             ease: "anticipate",
-            // delay: 0.4,
+            delay: durations.cupDelay,
           }}
           key="42"
         >
@@ -91,13 +94,12 @@ const Type = ({ url, title }) => {
       <motion.img
         src={`/fizz/${url}.png`}
         alt=""
-        style={{}}
         animate={{
           y: [0, 6, 3, 0],
           rotateZ: [0, 1, -0.5, 0],
         }}
         transition={{ repeat: Infinity, duration: 5 }}
-        className=" max-h-screen"
+        className=" max-h-screen "
         key="421"
       />
       <p className="text-xl font-extrabold text-gray-50 m-3">{title}</p>

@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { durations } from "../pages/index";
 
 const Shawarma = ({ step, transitions }) => {
   return (
     <motion.div
       className="h-full w-full flex justify-center items-center flex-col"
-      transition={{ duration: 0.5, ease: "anticipate" }}
+      transition={{ duration: durations.exitDuration, ease: "anticipate" }}
       key="Shawarma"
       exit={
         transitions.nextStep == 5
@@ -23,8 +24,8 @@ const Shawarma = ({ step, transitions }) => {
           }
           animate={{ x: -100, opacity: 1, y: 0 }}
           transition={{
-            duration: 0.8,
-            delay: 0.4,
+            duration: durations.titleDuration,
+            delay: durations.titleDelay,
             ease: "anticipate",
           }}
           key="61"
@@ -50,9 +51,9 @@ const Shawarma = ({ step, transitions }) => {
           }
           animate={{ x: 0, opacity: 1, y: 0 }}
           transition={{
-            duration: 0.8,
+            duration: durations.cupDuration,
             ease: "anticipate",
-            // delay: 0.2,
+            delay: durations.cupDelay,
           }}
           key="62"
         >
