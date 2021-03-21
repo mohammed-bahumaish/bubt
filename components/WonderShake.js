@@ -101,7 +101,7 @@ const Type = ({ url, title }) => {
         className=" max-h-screen "
         key="421"
       />
-      <p className="text-xl font-extrabold text-gray-50 m-3">{title}</p>
+      {/* <p className="text-xl font-extrabold text-gray-50 m-3">{title}</p> */}
     </>
   );
 };
