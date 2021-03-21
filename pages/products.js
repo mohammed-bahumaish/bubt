@@ -49,7 +49,7 @@ const Products = () => {
             SOUTH INDIA.
           </p>
         </div>
-        <div className="w-3/4 uppercase">
+        <div className="w-3/4 uppercase ">
           <p>
             BOBA (Bubble Tea) is the name given to the wide variety of
             refreshing fruit teas and milk teas served ice cold with natural
@@ -155,7 +155,7 @@ const Products = () => {
               } />
               <GridNode bgColor="#D6C13C" url="22"  
               content={
-                <DrinksContent name="GINGER TEA		
+                <DrinksContent name="GINGER LIME TEA		
                 " price1="150" price2="170" />
               }/>
               <GridNode bgColor="#DC5100" url="23"  
@@ -181,25 +181,43 @@ const Products = () => {
             </p>
             <div class="grid grid-flow-row grid-cols-3 gap-4 ">
               <GridNode
-                bgColor="#D22819"
+                bgColor="#F0F0F0"
                 url="40"
                 name="STRAWBERRY"
                 content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
+                  <DrinksContent name="VANILA		
+                  " price1="150" price2="170" color = "#3C3C3C" />
                 }
               />
               <GridNode
-                bgColor="#B016C8"
+                bgColor="#3D1503"
                 url="41"
-                name="STRAWBERRY"
+                name="CHOCOLATE"
                 content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
+                  <DrinksContent name="CHOCOLATE
+                  " price1="150" price2="170" />
                 }
               />
-              <GridNode bgColor="#7CBD1A" url="42" name="STR]AWBERRY" />
-              <GridNode bgColor="#D85C31" url="43" name="STRAWBERRY" />
-              <GridNode bgColor="#D7140A" url="44" name="STRAWBERRY" />
-              <GridNode bgColor="#D7140A" url="45" name="STRAWBERRY" />
+              <GridNode bgColor="#671F2A" url="42" name="STR]AWBERRY" 
+              content={
+                <DrinksContent name="STRAWBERRY				
+                " price1="150" price2="170" />
+              }/>
+              <GridNode bgColor="#74245E" url="43" name="STRAWBERRY" 
+              content={
+                <DrinksContent name="BLACKBERRY				
+                " price1="150" price2="170" />
+              }/>
+              <GridNode bgColor="#3E530C" url="44" name="STRAWBERRY" 
+              content={
+                <DrinksContent name="KIWI 		
+                " price1="150" price2="170" />
+              }/>
+              <GridNode bgColor="#93802F" url="45" name="STRAWBERRY" 
+              content={
+                <DrinksContent name="BUTTER SCOTCH		
+                " price1="150" price2="170" />
+              }/>
 
             </div>
           </div>
@@ -221,12 +239,21 @@ const Products = () => {
                 url="31"
                 name="STRAWBERRY"
                 content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
+                  <DrinksContent name="BLACKBERRY" price1="150" price2="170" />
                 }
               />
-              <GridNode bgColor="#7CBD1A" url="32" name="STR]AWBERRY" />
-              <GridNode bgColor="#D85C31" url="33" name="STRAWBERRY" />
-              <GridNode bgColor="#D7140A" url="34" name="STRAWBERRY" />
+              <GridNode bgColor="#7CBD1A" url="32" name="STR]AWBERRY"
+              content={
+                <DrinksContent name="KIWI/GREEN APPLE" price1="150" price2="170" />
+              } />
+              <GridNode bgColor="#D85C31" url="33" name="STRAWBERRY" 
+              content={
+                <DrinksContent name="GREEN APPLE /SWARBERRY" price1="150" price2="170" />
+              }/>
+              <GridNode bgColor="#D7140A" url="34" name="STRAWBERRY" 
+              content={
+                <DrinksContent name="PEACH/GREEN APPLE" price1="150" price2="170" />
+              }/>
             </div>
           </div>
 
@@ -240,11 +267,18 @@ const Products = () => {
                 url="50"
                 name="STRAWBERRY"
                 content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" color = "#4D5345" />
+                  <DrinksContent name="ORIGINAL		
+                  " price1="170" price2="190" color = "#4D5345" />
                 }
               />
-              <GridNode bgColor="#D2D2D2" url="51" name="STRAWBERRY" />
-              <GridNode bgColor="#3E30D8" url="52" name="STRAWBERRY" />
+              <GridNode bgColor="#D2D2D2" url="51" name="STRAWBERRY" 
+              content={
+                <DrinksContent name="MINT & LIME" price1="170" price2="190" color = "#4D5345" />
+              }/>
+              <GridNode bgColor="#3E30D8" url="52" name="STRAWBERRY" 
+              content={
+                <DrinksContent name="BLUE CURACAO" price1="170" price2="190"/>
+              }/>
             </div>
           </div>
 
@@ -254,44 +288,26 @@ const Products = () => {
             </p>
             <div class="grid grid-flow-row grid-cols-3 gap-4 ">
               <GridNode
-                bgColor="#D22819"
-                url="STRAWBERRY"
+                bgColor="#C37325"
+                url="60"
                 name="STRAWBERRY"
                 content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
+                  <FoodContent name="PERI PERI  CHICKEN" price1="170" />
                 }
               />
               <GridNode
-                bgColor="#D22819"
-                url="STRAWBERRY"
+                bgColor="#E6CE80"
+                url="61"
                 name="STRAWBERRY"
                 content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
+                  <FoodContent name="SCRAMMBLED EGG WITH CRUNCHY VEG" price1="125"color = "#3C3C3C"/>
                 }
               />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-            </div>
-          </div>
+              <GridNode bgColor="#6D760B" url="62" name="STRAWBERRY"
+              content={
+                <FoodContent name="PURE AND FUN VEGGY" price1="150" price2="170"/>
+              } />
 
-          <div className="m-5 mt-16">
-            <p className="uppercase text-xl font-extrabold">LIP SMACKERS</p>
-            <div class="grid grid-flow-row grid-cols-3 gap-4 ">
-              <GridNode
-                bgColor="#D22819"
-                url="STRAWBERRY"
-                name="STRAWBERRY"
-                content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
-                }
-              />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
             </div>
           </div>
 
@@ -301,18 +317,56 @@ const Products = () => {
             </p>
             <div class="grid grid-flow-row grid-cols-3 gap-4 ">
               <GridNode
-                bgColor="#D22819"
-                url="STRAWBERRY"
+                bgColor="#D1CBC0"
+                url="70"
                 name="STRAWBERRY"
                 content={
-                  <DrinksContent name="strawberry" price1="150" price2="170" />
+                  <FoodContent name="VANILA" price1="150"color = "#3C3C3C" />
                 }
               />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
-              <GridNode bgColor="#D22819" url="STRAWBERRY" name="STRAWBERRY" />
+              <GridNode bgColor="#34251D" url="71" name="STRAWBERRY" 
+              content={
+                <FoodContent name="CHOCOLATE" price1="150"/>
+              }/>
+              <GridNode bgColor="#D22819" url="72" name="STRAWBERRY" 
+              content={
+                <FoodContent name="STRAWBERRY" price1="150"/>
+              }/>
+              <GridNode bgColor="#A36148" url="73" name="STRAWBERRY" 
+              content={
+                <FoodContent name="FRUIT SALAD & ICE CREAM" price1="150"/>
+              }/>
+            </div>
+          </div>
+          <div className="m-5 mt-16">
+            <p className="uppercase text-xl font-extrabold">LIP SMACKERS</p>
+            <div class="grid grid-flow-row grid-cols-3 gap-4 ">
+              <GridNode
+                bgColor="#C18F3F"
+                url="80"
+                name="STRAWBERRY"
+                content={
+                  <FoodContent name="SHAWARMA 2nos platter		
+                  " price1="180" />
+                }
+              />
+              <GridNode bgColor="#AD4720" url="81" nXame="STRAWBERRY" 
+              content={
+                <FoodContent name="CHICKEN GRILL BURGERS		
+                " price1="200" />
+              }
+              />
+              <GridNode bgColor="#F69F33" url="82" name="STRAWBERRY" 
+              content={
+                <FoodContent name="CRUNCHY CHICKEN BURGER
+                " price1="200" />
+              }/>
+              <GridNode bgColor="#C87D06" url="83" name="STRAWBERRY"
+              content={
+                <FoodContent name="FRENCH FRIES		
+                " price1="80" />
+              }/>
+
             </div>
           </div>
         </div>
@@ -381,7 +435,26 @@ const DrinksContent = ({ name, price1, price2 ,color = "#ffffff" }) => {
         <p>
           <p className="text-sm"
           style={{ color: color}}
-          >🥤350ML {price2} RSX
+          >🥤350ML {price2} RS
+          </p>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const FoodContent = ({ name, price1 ,color = "#ffffff" }) => {
+  return (
+    <div className="text-gray-50 ">
+      <p className="text-sm font-bold uppercase  mb-3"
+      style={{ color: color }}
+      >{name}
+      </p>
+      <div>
+        <p>
+          <p className="text-sm "
+          style={{ color: color }}
+          >{price1} RS
           </p>
         </p>
       </div>
