@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { durations } from "../pages/index";
+import Link from "next/link";
 
 const FruitFizz = ({ step, transitions }) => {
   return (
@@ -11,24 +12,29 @@ const FruitFizz = ({ step, transitions }) => {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
-      <motion.div
-        className="w-36 h-36 bg-white rounded-full absolute top-1/2 left-1/2 z-30 flex justify-center items-center cursor-pointer"
-        style={{ marginTop: "-3rem", marginLeft: "-4.5rem" }}
-        whileHover={{
-          scale: 1.1,
-          transition: { duration: 0.3, ease: "anticipate" },
-        }}
-        whileTap={{ scale: 1 }}
-        initial={{ y: 100, opacity: 0 }}
-        animate={{
-          y: 0,
-          opacity: 1,
-          transition: { delay: 0.2, duration: 0.8, ease: "anticipate" },
-        }}
-        key="Footer1"
-      >
-        <p className="text-xl font-extrabold text-center ">CONTACT US</p>
-      </motion.div>
+      <Link href="/franchise">
+        <a>
+          <motion.div
+            className="w-36 h-36 bg-white rounded-full absolute top-1/2 left-1/2 z-30 flex justify-center items-center cursor-pointer"
+            style={{ marginTop: "-3rem", marginLeft: "-4.5rem" }}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.3, ease: "anticipate" },
+            }}
+            whileTap={{ scale: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{
+              y: 0,
+              opacity: 1,
+              transition: { delay: 0.2, duration: 0.8, ease: "anticipate" },
+            }}
+            key="Footer1"
+          >
+            <p className="text-xl font-extrabold text-center ">CONTACT US</p>
+          </motion.div>
+        </a>
+      </Link>
+
       <div className=" flex-grow flex w-full" key="51footer">
         <div className="flex-1 ">
           <motion.div

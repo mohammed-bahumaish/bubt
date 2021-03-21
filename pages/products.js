@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import { useGesture } from "react-use-gesture";
 import { pushBubble } from "../components/Bub";
+import Head from "next/head";
 
 const Products = ({ dimensions }) => {
   const _window = useRef(null);
@@ -34,6 +35,10 @@ const Products = ({ dimensions }) => {
   return (
     <div id="container">
       <Header show={showHeader} />
+      <Head>
+        <title>BUB-T by ASHAAN FOOD - Products</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="mt-52 m-10 text-center text-lg  flex flex-col justify-center items-center">
         <div className="m-5">
           <p className="text-5xl font-extrabold" style={{ color: "#7FBD26" }}>
@@ -477,6 +482,18 @@ const Products = ({ dimensions }) => {
                     name="BLUE CURACAO"
                     price1="170"
                     price2="190"
+                  />
+                }
+              />
+              <GridNode
+                bgColor="#3E30D8"
+                url="53"
+                name="STRAWBERRY"
+                content={
+                  <DrinksContent
+                    name="RED BULL MIX"
+                    price1="200"
+                    price2="250"
                   />
                 }
               />

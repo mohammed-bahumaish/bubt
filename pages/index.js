@@ -12,6 +12,7 @@ import Waffles from "../components/Waffles";
 import Shawarma from "../components/Shawarma";
 import Footer from "../components/Footer";
 import { fastBubs, pushBubble } from "../components/Bub";
+import Head from "next/head";
 
 export default function Home() {
   const _window = useRef(null);
@@ -96,6 +97,10 @@ export default function Home() {
       }}
     >
       <Header show={showHeader} />
+      <Head>
+        <title>BUB-T by ASHAAN FOOD</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <motion.div
         className="h-screen w-screen"
         animate={

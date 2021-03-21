@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import { useGesture } from "react-use-gesture";
+import Head from "next/head";
 
 const Products = () => {
   const _window = useRef(null);
@@ -12,7 +13,7 @@ const Products = () => {
   useGesture(
     {
       onWheel: ({ vxvy: [, vy], movement: [x, y] }) => {
-        if (y >1) setShowHeader(false);
+        if (y > 1) setShowHeader(false);
         else if (y < -1) setShowHeader(true);
       },
     },
@@ -24,6 +25,10 @@ const Products = () => {
   return (
     <div>
       <Header show={showHeader} />
+      <Head>
+        <title>BUB-T by ASHAAN FOOD - Franchise</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="mt-56 m-10">
         <div className="text-center text-5xl uppercase relative ">
           <p className="z-30">be part</p>
@@ -148,6 +153,10 @@ const Products = () => {
               SEND
             </button>
           </div>
+        </div>
+        <div className="w-full text-center my-16">
+          <p>📩info@ashaanfoods.in</p>
+          <p>🌐www.ashaanfoods.in</p>
         </div>
       </div>
     </div>
