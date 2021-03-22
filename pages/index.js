@@ -45,7 +45,7 @@ export default function Home({ dimensions }) {
   useEffect(() => {
     // if () setIsLoaded(true);
     if (dimensions.width > 1 && dimensions.width <= 768) router.push("/mobile");
-    else setIsLoaded(true);
+    else if (dimensions.width > 1) setIsLoaded(true);
   }, [dimensions.width]);
 
   useGesture(
