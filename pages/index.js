@@ -13,9 +13,12 @@ import Shawarma from "../components/Shawarma";
 import Footer from "../components/Footer";
 import { fastBubs, pushBubble } from "../components/Bub";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-export default function Home() {
+export default function Home({ dimensions }) {
   const _window = useRef(null);
+  const router = useRouter();
+
   const div = useRef(null);
   const [transitions, setTransation] = useState({
     nextStep: 0,
@@ -24,6 +27,7 @@ export default function Home() {
   const [introExited, setintroExited] = useState(false);
   const [step, setStep] = useState(0);
   const [showHeader, setShowHeader] = useState(true);
+  const [loaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     _window.current = window;
@@ -37,6 +41,11 @@ export default function Home() {
     }, 1500);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (dimensions.width > 1) setIsLoaded(true);
+    if (dimensions.width <= 768 && loaded) router.push("/mobile");
+  }, [dimensions.width]);
 
   useGesture(
     {
@@ -85,7 +94,7 @@ export default function Home() {
       { leading: true, trailing: false }
     )
   );
-
+  if (!loaded) return <p>loading</p>;
   return (
     <div
       className="overflow-hidden block relative m-0 p-0 z-0"
@@ -96,7 +105,6 @@ export default function Home() {
           "radial-gradient(circle, rgba(255,255,255,0.3337710084033614) 0%, rgba(89,199,115,0) 39%, rgba(0,0,0,0.3477766106442577) 100%)",
       }}
     >
-      <Header show={showHeader} />
       <Head>
         <title>BUB-T by ASHAAN FOOD</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -142,6 +150,7 @@ export default function Home() {
               transitions={transitions}
               setintroExited={setintroExited}
               introExited={introExited}
+              dimensions={dimensions}
             />
           ) : step == 3 ? (
             <WonderShake step={step} key="3" transitions={transitions} />

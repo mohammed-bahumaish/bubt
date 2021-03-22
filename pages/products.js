@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
+import MobileHeader from "../components/MobileHeader";
 import { useGesture } from "react-use-gesture";
 import { pushBubble } from "../components/Bub";
 import Head from "next/head";
@@ -34,7 +35,7 @@ const Products = ({ dimensions }) => {
 
   return (
     <div id="container">
-      <Header show={showHeader} />
+      {dimensions.width > 768 ? <Header show={showHeader} /> : <MobileHeader />}
       <Head>
         <title>BUB-T by ASHAAN FOOD - Products</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

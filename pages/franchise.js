@@ -2,8 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import { useGesture } from "react-use-gesture";
 import Head from "next/head";
+import MobileHeader from "../components/MobileHeader";
 
-const Products = () => {
+const Products = ({ dimensions }) => {
   const _window = useRef(null);
   const [showHeader, setShowHeader] = useState(true);
 
@@ -24,7 +25,7 @@ const Products = () => {
 
   return (
     <div>
-      <Header show={showHeader} />
+      {dimensions.width > 768 ? <Header show={showHeader} /> : <MobileHeader />}
       <Head>
         <title>BUB-T by ASHAAN FOOD - Franchise</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
