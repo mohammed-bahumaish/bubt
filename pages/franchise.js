@@ -27,7 +27,7 @@ const Products = ({ dimensions }) => {
     <div>
       {dimensions.width > 768 ? <Header show={showHeader} /> : <MobileHeader />}
       <Head>
-        <title>BUB-T by ASHAAN FOOD - Franchise</title>
+        <title>BUB-T by ASHAAN FOODS - Franchise</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="mt-56 m-10 overflow-hidden">

@@ -58,13 +58,13 @@ export default function Home({ dimensions }) {
       style={{ backgroundColor: color }}
     >
       <Head>
-        <title>BUB-T by ASHAAN FOOD</title>
+        <title>BUB-T by ASHAAN FOODS</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <MHeader />
       <motion.div className="w-screen">
         <div className="m-10">
-          <p className="font-black text-3xl">BUB-T by ASHAAN FOOD</p>
+          <p className="font-black text-3xl">BUB-T by ASHAAN FOODS</p>
           <p>
             Happy to present true, authentic Taiwanese BOBA (Bubble) Tea… In
             SOUTH INDIA.

@@ -37,7 +37,7 @@ const Products = ({ dimensions }) => {
     <div id="container">
       {dimensions.width > 768 ? <Header show={showHeader} /> : <MobileHeader />}
       <Head>
-        <title>BUB-T by ASHAAN FOOD - Products</title>
+        <title>BUB-T by ASHAAN FOODS - Products</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="mt-52 m-10 text-center text-lg  flex flex-col justify-center items-center">
