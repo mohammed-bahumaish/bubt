@@ -13,6 +13,7 @@ export default function Home({ dimensions }) {
   useEffect(() => {
     if (dimensions.width > 768) router.push("/");
   }, [dimensions.width]);
+
   useEffect(() => {
     _window.current = window;
     fastBubs();
@@ -194,16 +195,16 @@ export default function Home({ dimensions }) {
             className="h-52 w-full bg-white text-center flex flex-col justify-center items-center mb-20"
             key="Footer4"
           >
-            <p className="mb-3 text-base font-bold">
+            <p className="mb-3 text-base font-bold mx-5">
               subscribe to out newsletter. you can always be up to date with our
               ashaanfood news!
             </p>
-            <div className="w-full h-10 max-w-lg">
+            <div className="w-full h-10 max-w-lg px-5">
               <input
                 type="text"
                 name="email"
                 id="email"
-                class="rounded-full  w-full"
+                class="rounded-full w-full "
                 placeholder="EMAIL"
               />
               <button className="bg-gray-900 rounded-full text-white w-52  ml-3 font-bold uppercase h-14 mt-5">

@@ -153,6 +153,7 @@ const Products = ({ dimensions }) => {
                     price2="170"
                   />
                 }
+                mobile={dimensions.width <= 786}
               />
               <GridNode
                 bgColor="#D7A549"
@@ -165,6 +166,7 @@ const Products = ({ dimensions }) => {
                     price2="170"
                   />
                 }
+                mobile={dimensions.width <= 786}
               />
               <GridNode
                 bgColor="#D6C13C"
@@ -177,6 +179,7 @@ const Products = ({ dimensions }) => {
                     price2="170"
                   />
                 }
+                mobile={dimensions.width <= 786}
               />
               <GridNode
                 bgColor="#DC5100"
@@ -189,8 +192,10 @@ const Products = ({ dimensions }) => {
                     price2="170"
                   />
                 }
+                mobile={dimensions.width <= 786}
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#32C616"
                 url="14"
                 content={
@@ -203,6 +208,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#67CC19"
                 url="15"
                 content={
@@ -222,6 +228,7 @@ const Products = ({ dimensions }) => {
             </p>
             <div class="flex flex-wrap justify-center">
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#64C31B"
                 url="20"
                 name="STRAWBERRY"
@@ -235,6 +242,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D7A549"
                 url="21"
                 content={
@@ -247,6 +255,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D6C13C"
                 url="22"
                 content={
@@ -259,6 +268,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#DC5100"
                 url="23"
                 content={
@@ -271,6 +281,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#32C616"
                 url="24"
                 content={
@@ -283,6 +294,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#67CC19"
                 url="25"
                 content={
@@ -302,6 +314,7 @@ const Products = ({ dimensions }) => {
             </p>
             <div class="flex flex-wrap justify-center">
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#F0F0F0"
                 url="40"
                 name="STRAWBERRY"
@@ -316,6 +329,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#3D1503"
                 url="41"
                 name="CHOCOLATE"
@@ -329,6 +343,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#671F2A"
                 url="42"
                 name="STR]AWBERRY"
@@ -342,6 +357,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#74245E"
                 url="43"
                 name="STRAWBERRY"
@@ -355,6 +371,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#3E530C"
                 url="44"
                 name="STRAWBERRY"
@@ -368,6 +385,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#93802F"
                 url="45"
                 name="STRAWBERRY"
@@ -388,6 +406,7 @@ const Products = ({ dimensions }) => {
             </p>
             <div class="flex flex-wrap justify-center">
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D22819"
                 url="30"
                 name="STRAWBERRY"
@@ -396,6 +415,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#B016C8"
                 url="31"
                 name="STRAWBERRY"
@@ -404,6 +424,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#7CBD1A"
                 url="32"
                 name="STR]AWBERRY"
@@ -416,6 +437,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D85C31"
                 url="33"
                 name="STRAWBERRY"
@@ -428,6 +450,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D7140A"
                 url="34"
                 name="STRAWBERRY"
@@ -448,6 +471,7 @@ const Products = ({ dimensions }) => {
             </p>
             <div class="flex flex-wrap justify-center">
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D2D2D2"
                 url="50"
                 name="STRAWBERRY"
@@ -462,6 +486,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D2D2D2"
                 url="51"
                 name="STRAWBERRY"
@@ -475,6 +500,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#3E30D8"
                 url="52"
                 name="STRAWBERRY"
@@ -487,6 +513,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#3E30D8"
                 url="53"
                 name="STRAWBERRY"
@@ -507,12 +534,14 @@ const Products = ({ dimensions }) => {
             </p>
             <div class="flex flex-wrap justify-center ">
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#C37325"
                 url="60"
                 name="STRAWBERRY"
                 content={<FoodContent name="PERI PERI  CHICKEN" price1="170" />}
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#E6CE80"
                 url="61"
                 name="STRAWBERRY"
@@ -525,6 +554,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#6D760B"
                 url="62"
                 name="STRAWBERRY"
@@ -545,6 +575,7 @@ const Products = ({ dimensions }) => {
             </p>
             <div class="flex flex-wrap justify-center ">
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D1CBC0"
                 url="70"
                 name="STRAWBERRY"
@@ -553,18 +584,21 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#34251D"
                 url="71"
                 name="STRAWBERRY"
                 content={<FoodContent name="CHOCOLATE" price1="150" />}
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#D22819"
                 url="72"
                 name="STRAWBERRY"
                 content={<FoodContent name="STRAWBERRY" price1="150" />}
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#A36148"
                 url="73"
                 name="STRAWBERRY"
@@ -578,6 +612,7 @@ const Products = ({ dimensions }) => {
             <p className="uppercase text-xl font-extrabold">LIP SMACKERS</p>
             <div class="flex flex-wrap justify-center">
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#C18F3F"
                 url="80"
                 name="STRAWBERRY"
@@ -590,6 +625,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#AD4720"
                 url="81"
                 nXame="STRAWBERRY"
@@ -602,6 +638,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#F69F33"
                 url="82"
                 name="STRAWBERRY"
@@ -614,6 +651,7 @@ const Products = ({ dimensions }) => {
                 }
               />
               <GridNode
+                mobile={dimensions.width <= 786}
                 bgColor="#C87D06"
                 url="83"
                 name="STRAWBERRY"
@@ -627,6 +665,7 @@ const Products = ({ dimensions }) => {
               />
             </div>
           </div>
+          <div className="h-60"></div>
         </div>
       </div>
     </div>
@@ -635,25 +674,27 @@ const Products = ({ dimensions }) => {
 
 export default Products;
 
-const GridNode = ({ url, bgColor, content }) => {
+const GridNode = ({ url, bgColor, content, mobile }) => {
   const [onHover, setOnHover] = useState(false);
 
   return (
     <motion.div
-      className="w-60 h-60 relative m-10"
+      className="w-60 h-60 relative m-10 mb-16"
       onHoverStart={() => setOnHover(true)}
       onHoverEnd={() => setOnHover(false)}
     >
       <motion.div
         className="w-full h-full z-0"
         transition={{ duration: 0.6, ease: "easeInOut" }}
-        animate={onHover ? { scale: 1.2 } : { scale: 1 }}
+        animate={onHover || mobile ? { scale: 1.2 } : { scale: 1 }}
       >
         <motion.img
           src={`/fizz/${url}.png`}
-          animate={onHover ? { rotateZ: [0, -3, 0], y: [0, 5, 0] } : {}}
+          animate={
+            onHover || mobile ? { rotateZ: [0, -3, 0], y: [0, 5, 0] } : {}
+          }
           transition={
-            onHover
+            onHover || mobile
               ? {
                   duration: 5,
                   repeat: Infinity,
@@ -665,7 +706,7 @@ const GridNode = ({ url, bgColor, content }) => {
       <motion.div
         className="w-40 h-40 absolute rounded-full origin-top z-10 "
         initial={{ scale: 0 }}
-        animate={onHover ? { scale: 1 } : { scale: 0 }}
+        animate={onHover || mobile ? { scale: 1 } : { scale: 0 }}
         style={{ backgroundColor: bgColor, bottom: -100, right: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
