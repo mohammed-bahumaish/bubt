@@ -1,6 +1,12 @@
 import { useGesture } from "react-use-gesture";
 import { useRef, useState, useEffect, memo } from "react";
-import { motion, AnimatePresence, useCycle } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useCycle,
+  useViewportScroll,
+  useTransform,
+} from "framer-motion";
 import { fastBubs, pushBubble } from "../components/Bub";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -9,6 +15,19 @@ import MHeader from "../components/MobileHeader";
 export default function Home({ dimensions }) {
   const _window = useRef(null);
   const router = useRouter();
+  const { scrollYProgress } = useViewportScroll();
+  const color = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [
+      "rgb(0,255,235)",
+      "rgb(111,253,118)",
+      "#f27d1d",
+      "#f27d1d",
+      "#ea1c39",
+      "#ea1c39",
+    ]
+  );
 
   useEffect(() => {
     if (dimensions.width > 768) router.push("/");
@@ -27,10 +46,16 @@ export default function Home({ dimensions }) {
     return () => clearInterval(interval);
   }, []);
 
+  scrollYProgress.onChange((v) => {
+    console.log(color.get());
+  });
+
+  console.log(color.get());
   return (
-    <div
+    <motion.div
       id="container"
-      className="overflow-hidden block relative m-0 p-0 z-0 mt-28"
+      className="overflow-hidden block relative m-0 p-0 z-0 pt-28"
+      style={{ backgroundColor: color }}
     >
       <Head>
         <title>BUB-T by ASHAAN FOOD</title>
@@ -192,7 +217,7 @@ export default function Home({ dimensions }) {
             />
           </motion.div>
           <motion.div
-            className="h-52 w-full bg-white text-center flex flex-col justify-center items-center mb-20"
+            className="h-52 w-full bg-white text-center flex flex-col justify-center items-center pb-20"
             key="Footer4"
           >
             <p className="mb-3 text-base font-bold mx-5">
@@ -214,7 +239,7 @@ export default function Home({ dimensions }) {
           </motion.div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
