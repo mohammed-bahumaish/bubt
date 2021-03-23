@@ -39,11 +39,23 @@ export default function Home({ dimensions }) {
         duration: 7,
       });
     }, 1500);
+
     return () => clearInterval(interval);
   }, []);
+  function handleEvent(e) {
+    if (["ArrowDown", "ArrowRight"].includes(e.code) && step < 7) {
+      nextStep.current(1);
+    }
+    if (["ArrowUp", "ArrowLeft"].includes(e.code) && step > 0) {
+      nextStep.current(-1);
+    }
+  }
+  useEffect(() => {
+    document.addEventListener("keydown", handleEvent);
+    return () => document.removeEventListener("keydown", handleEvent);
+  }, [step]);
 
   useEffect(() => {
-    // if () setIsLoaded(true);
     if (dimensions.width > 1 && dimensions.width <= 768) router.push("/mobile");
     else if (dimensions.width > 1) setIsLoaded(true);
   }, [dimensions.width]);
@@ -110,6 +122,7 @@ export default function Home({ dimensions }) {
         <title>BUB-T by ASHAAN FOODS</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <Header show={true} />
       <motion.div
         className="h-screen w-screen"
         animate={

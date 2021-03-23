@@ -14,14 +14,6 @@
   -o-user-select: none;
   user-select: none;
 }
-::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-/* 
-@media all and (min-width: 1024px) {
-
-} */
 
 .cup {
   width: 37rem;

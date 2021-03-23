@@ -21,6 +21,20 @@ const Products = ({ dimensions }) => {
     }, 1500);
     return () => clearInterval(interval);
   }, []);
+
+  function handleEvent(e) {
+    if (["ArrowDown"].includes(e.code)) {
+      setShowHeader(false);
+    }
+    if (["ArrowUp"].includes(e.code)) {
+      setShowHeader(true);
+    }
+  }
+  useEffect(() => {
+    document.addEventListener("keydown", handleEvent);
+    return () => document.removeEventListener("keydown", handleEvent);
+  }, []);
+
   useGesture(
     {
       onWheel: ({ vxvy: [, vy], movement: [x, y] }) => {
