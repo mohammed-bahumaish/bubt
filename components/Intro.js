@@ -170,7 +170,7 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
               <motion.div
                 exit={{ opacity: 0 }}
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={{ opacity: 1, transition: { delay: 0.5 } }}
                 className="mouse"
               ></motion.div>
             )}
