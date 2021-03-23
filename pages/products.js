@@ -54,7 +54,7 @@ const Products = ({ dimensions }) => {
         <title>BUB-T by ASHAAN FOODS - Products</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="mt-52 m-10 text-center text-lg  flex flex-col justify-center items-center">
+      <div className="lg:mt-52 mt-32 m-10 text-center text-lg  flex flex-col justify-center items-center">
         <div className="m-5">
           <p className="text-5xl font-extrabold" style={{ color: "#7FBD26" }}>
             PAMPER YOUR TASTE BUDS
@@ -62,7 +62,7 @@ const Products = ({ dimensions }) => {
         </div>
         <div className="m-5">
           <p className="text-2xl font-black uppercase">
-            ASHAAN FOOD Under their brand Name BUB-T
+            ASHAAN FOODS Under their brand Name BUB-T
           </p>
           <p className="text-xl font-bold uppercase">
             Happy to present true, authentic Taiwanese BOBA (Bubble) Tea… In

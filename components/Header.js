@@ -30,7 +30,9 @@ const Header = ({ show }) => {
             <Link href="/">
               <a>
                 <img src="/logo.svg" alt="" className="lg:w-44 w-32" />
-                <p className="font-extrabold text-base -mt-9">by ASHAAN FOOD</p>
+                <p className="font-extrabold text-base -mt-9">
+                  by ASHAAN FOODS
+                </p>
               </a>
             </Link>
           </motion.div>

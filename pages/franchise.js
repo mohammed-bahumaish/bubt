@@ -59,10 +59,49 @@ const Products = ({ dimensions }) => {
           >
             our family
           </p>
-          <p className="text-xl font-semibold mt-3">
-            Team "BUB-T" @ Ashaan Foods.
-          </p>
         </div>
+        <div className="text-center mt-36">
+          <p className="font-bold text-2xl mb-5">FRANCHISE APPLICATION</p>
+          <p className="lg:text-lg text-base  ">
+            SEND YOUR REQUEST TO JOIN OUR TEAM OF FRANCHISEES BY COMPLETING THIS
+            SHORT FORM. WE WILL GET IN TOUCH WITH YOU SOON.
+          </p>
+          <div className="flex flex-col  mt-10 items-center lg:px-32">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="px-4 py-3 rounded-full max-w-2xl w-full mt-4"
+              placeholder="NAME"
+            />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
+              placeholder="EMAIL"
+            />
+            <input
+              type="text"
+              name="message"
+              id="message"
+              class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
+              placeholder="MESSAGE"
+            />
+            <input
+              type="text"
+              name="location"
+              id="location"
+              class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
+              placeholder="INTENDED LOCATION"
+            />
+
+            <button className="bg-gray-900 rounded-full text-white w-52 h-16 m-10">
+              SEND
+            </button>
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-4 mt-36">
           <div className="m-3 p-10 rounded-3xl font-bold shadow-sm bg-gradient-to-r from-gray-50  to-gray-100 ">
             <p className="text-xl font-extrabold mb-5">
@@ -128,50 +167,14 @@ const Products = ({ dimensions }) => {
             </ul>
           </div>
         </div>
-        <div className="text-center mt-10">
-          <p className="font-bold text-2xl mb-5">FRANCHISE APPLICATION</p>
-          <p className="lg:text-lg text-base  ">
-            SEND YOUR REQUEST TO JOIN OUR TEAM OF FRANCHISEES BY COMPLETING THIS
-            SHORT FORM. WE WILL GET IN TOUCH WITH YOU SOON.
-          </p>
-          <div className="flex flex-col  mt-10 items-center">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="px-4 py-3 rounded-full w-full mt-4"
-              placeholder="NAME"
-            />
-            <input
-              type="text"
-              name="email"
-              id="email"
-              class="px-4 py-3 rounded-full  w-full mt-4"
-              placeholder="EMAIL"
-            />
-            <input
-              type="text"
-              name="message"
-              id="message"
-              class="px-4 py-3 rounded-full  w-full mt-4"
-              placeholder="MESSAGE"
-            />
-            <input
-              type="text"
-              name="location"
-              id="location"
-              class="px-4 py-3 rounded-full  w-full mt-4"
-              placeholder="INTENDED LOCATION"
-            />
 
-            <button className="bg-gray-900 rounded-full text-white w-52 h-16 m-10">
-              SEND
-            </button>
-          </div>
-        </div>
         <div className="w-full text-center my-16">
           <p>📩info@ashaanfoods.in</p>
           <p>🌐www.ashaanfoods.in</p>
+          <p>📞+918884422885</p>
+          <p className="text-xl font-semibold mt-3">
+            Team "BUB-T" @ Ashaan Foods.
+          </p>
         </div>
       </div>
     </div>

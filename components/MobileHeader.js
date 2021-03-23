@@ -32,19 +32,17 @@ const Header = () => {
               <Link href="/mobile" className="flex-1 flex justify-start">
                 <a className=" flex justify-center items-center flex-col m-4 -mt-6">
                   <img src="/logo.svg" alt="" className="w-20" />
-                  <p className="font-extrabold text-xs -mt-5">by ASHAAN FOOD</p>
+                  <p className="font-extrabold text-xs -mt-5">
+                    by ASHAAN FOODS
+                  </p>
                 </a>
               </Link>
             </motion.div>
           </div>
           <div className="flex-1 flex justify-end">
-            <div className="w-8 mr-6 mt-7">
-              <img
-                src="/menu.svg"
-                alt=""
-                onClick={() => setIsOpen((v) => !v)}
-              />
-            </div>
+            <motion.div animate={isOpen ? "open" : "closed"}>
+              <MenuToggle toggle={() => setIsOpen((v) => !v)} />
+            </motion.div>
           </div>
         </div>
         <AnimatePresence exitBeforeEnter>
@@ -93,3 +91,57 @@ const Header = () => {
 };
 
 export default Header;
+
+export const MenuToggle = ({ toggle }) => (
+  <button
+    onClick={toggle}
+    style={{
+      outline: "none",
+      border: "none",
+      WebkitUserSelect: "none",
+      MozUserSelect: "none",
+      msUserSelect: "none",
+      cursor: "pointer",
+      position: "absolute",
+      top: "18px",
+      right: "15px",
+      width: "50px",
+      height: "50px",
+      borderRadius: "50%",
+      background: "transparent",
+    }}
+  >
+    <svg width="23" height="23" viewBox="0 0 23 23">
+      <Path
+        variants={{
+          closed: { d: "M 2 2.5 L 20 2.5" },
+          open: { d: "M 3 16.5 L 17 2.5" },
+        }}
+      />
+      <Path
+        d="M 2 9.423 L 20 9.423"
+        variants={{
+          closed: { opacity: 1 },
+          open: { opacity: 0 },
+        }}
+        transition={{ duration: 0.1 }}
+      />
+      <Path
+        variants={{
+          closed: { d: "M 2 16.346 L 20 16.346" },
+          open: { d: "M 3 2.5 L 17 16.346" },
+        }}
+      />
+    </svg>
+  </button>
+);
+
+const Path = (props) => (
+  <motion.path
+    fill="transparent"
+    strokeWidth="3"
+    stroke="hsl(0, 0%, 18%)"
+    strokeLinecap="round"
+    {...props}
+  />
+);
