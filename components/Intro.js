@@ -163,7 +163,20 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
           </motion.div>
         </motion.div>
       </div>
-      <div className="flex-1"></div>
+      <div className="flex-1">
+        <div className="absolute bottom-10">
+          <AnimatePresence>
+            {step == 0 && (
+              <motion.div
+                exit={{ opacity: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="mouse"
+              ></motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </motion.div>
   );
 };

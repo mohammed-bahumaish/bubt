@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/sass.scss";
 import { useState, useEffect } from "react";
 
 function debounce(fn, ms) {

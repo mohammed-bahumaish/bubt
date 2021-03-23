@@ -70,11 +70,11 @@ export const pushBubble = ({ quantity, duration, color }) => {
 
 export const fastBubs = () => {
   pushBubble({
-    quantity: 20,
+    quantity: 15,
     duration: 2,
   });
   pushBubble({
-    quantity: 5,
+    quantity: 3,
     duration: 10,
   });
   setTimeout(() => {

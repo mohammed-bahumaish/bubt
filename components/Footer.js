@@ -26,7 +26,7 @@ const FruitFizz = ({ step, transitions }) => {
             animate={{
               y: 0,
               opacity: 1,
-              transition: { delay: 0.2, duration: 0.8, ease: "anticipate" },
+              transition: { delay: 0.2, duration: 0.2, ease: "anticipate" },
             }}
             key="Footer1"
           >
@@ -82,7 +82,7 @@ const FruitFizz = ({ step, transitions }) => {
           className="h-full w-full bg-white text-center flex flex-col justify-center items-center"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: "anticipate" }}
+          transition={{ delay: 0.2, duration: 0.4, ease: "anticipate" }}
           key="Footer4"
         >
           <p className="mb-3 text-lg font-bold">
