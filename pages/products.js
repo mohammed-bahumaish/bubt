@@ -168,6 +168,7 @@ const Products = ({ dimensions }) => {
                   />
                 }
                 mobile={dimensions.width <= 786}
+                onhover={true}
               />
               <GridNode
                 bgColor="#D7A549"
@@ -688,8 +689,8 @@ const Products = ({ dimensions }) => {
 
 export default Products;
 
-const GridNode = ({ url, bgColor, content, mobile }) => {
-  const [onHover, setOnHover] = useState(false);
+const GridNode = ({ url, bgColor, content, mobile, onhover = false }) => {
+  const [onHover, setOnHover] = useState(onhover);
 
   return (
     <motion.div
