@@ -31,17 +31,26 @@ export default function Home({ dimensions }) {
 
   useEffect(() => {
     _window.current = window;
-    fastBubs();
 
-    const interval = setInterval(() => {
+    setTimeout(() => {
       pushBubble({
-        quantity: 2,
-        duration: 7,
+        quantity: 15,
+        duration: 5,
       });
-    }, 1500);
+    }, 500);
 
-    return () => clearInterval(interval);
+    // fastBubs();
+
+    // const interval = setInterval(() => {
+    //   pushBubble({
+    //     quantity: 2,
+    //     duration: 7,
+    //   });
+    // }, 1500);
+
+    // return () => clearInterval(interval);
   }, []);
+
   function handleEvent(e) {
     if (["ArrowDown", "ArrowRight"].includes(e.code) && step < 7) {
       nextStep.current(1);
@@ -50,6 +59,7 @@ export default function Home({ dimensions }) {
       nextStep.current(-1);
     }
   }
+
   useEffect(() => {
     document.addEventListener("keydown", handleEvent);
     return () => document.removeEventListener("keydown", handleEvent);
@@ -84,7 +94,7 @@ export default function Home({ dimensions }) {
           });
           setTimeout(() => {
             setStep((v) => {
-              if ([0, 6].includes(v)) fastBubs();
+              // if ([0, 6].includes(v)) fastBubs();
               return v + 1;
             });
           }, 10);
@@ -97,7 +107,7 @@ export default function Home({ dimensions }) {
           });
           setTimeout(() => {
             setStep((v) => {
-              if ([2, 7].includes(v)) fastBubs();
+              // if ([2, 7].includes(v)) fastBubs();
               return v - 1;
             });
           }, 10);

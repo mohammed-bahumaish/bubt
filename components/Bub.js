@@ -24,6 +24,7 @@ const Bubble = ({ props: { x, y, duration, color = "white" } }) => {
           transition: {
             ease: "linear",
             duration: duration * clamp(Math.random(), 0.5, 1),
+            repeat:Infinity
           },
         }}
         className=" bottom-0 h-0 "
@@ -62,9 +63,9 @@ export const pushBubble = ({ quantity, duration, color }) => {
       />,
       bub
     );
-    setTimeout(() => {
-      bub?.remove();
-    }, getRandomInt(2000, 4000));
+    // setTimeout(() => {
+    //   bub?.remove();
+    // }, getRandomInt(2000, 4000));
   }
 };
 
