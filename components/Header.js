@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { memo } from "react";
 
 const Header = ({ show }) => {
   return (
@@ -48,4 +49,4 @@ const Header = ({ show }) => {
   );
 };
 
-export default Header;
+export default memo(Header);

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { durations } from "../pages/index";
+import { memo } from "react";
 
 const Shawarma = ({ step, transitions }) => {
   return (
@@ -76,4 +77,4 @@ const Shawarma = ({ step, transitions }) => {
   );
 };
 
-export default Shawarma;
+export default memo(Shawarma);

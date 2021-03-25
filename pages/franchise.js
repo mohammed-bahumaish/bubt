@@ -3,10 +3,15 @@ import Header from "../components/Header";
 import { useGesture } from "react-use-gesture";
 import Head from "next/head";
 import MobileHeader from "../components/MobileHeader";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import axios from "axios";
 
 const Products = ({ dimensions }) => {
   const _window = useRef(null);
+  const [name, setName] = useState("");
+  const [email, set] = useState(true);
   const [showHeader, setShowHeader] = useState(true);
+  const [submited, setSubmited] = useState({ submited: false, error: false });
 
   useEffect(() => {
     _window.current = window;
@@ -60,46 +65,102 @@ const Products = ({ dimensions }) => {
             our family
           </p>
         </div>
+
         <div className="text-center mt-36">
           <p className="font-bold text-2xl mb-5">FRANCHISE APPLICATION</p>
           <p className="lg:text-lg text-base  ">
             SEND YOUR REQUEST TO JOIN OUR TEAM OF FRANCHISEES BY COMPLETING THIS
             SHORT FORM. WE WILL GET IN TOUCH WITH YOU SOON.
           </p>
-          <div className="flex flex-col  mt-10 items-center lg:px-32">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="px-4 py-3 rounded-full max-w-2xl w-full mt-4"
-              placeholder="NAME"
-            />
-            <input
-              type="text"
-              name="email"
-              id="email"
-              class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
-              placeholder="EMAIL"
-            />
-            <input
-              type="text"
-              name="message"
-              id="message"
-              class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
-              placeholder="MESSAGE"
-            />
-            <input
-              type="text"
-              name="location"
-              id="location"
-              class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
-              placeholder="INTENDED LOCATION"
-            />
+          <Formik
+            initialValues={{ name: "", email: "", message: "", location: "" }}
+            validate={(values) => {
+              const errors = {};
+              if (!values.name) {
+                errors.name = "Required";
+              }
+              if (!values.email) {
+                errors.email = "Required";
+              } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+              ) {
+                errors.email = "Invalid email address";
+              }
+              return errors;
+            }}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(async () => {
+                await axios
+                  .post("https://bubt-ashaanfood.vercel.app/api/sendgrid", {
+                    subject: "new franchise application Submited",
+                    text: `
+                  NAME:${values.name},<br/>
+                  EMAIL:${values.email},<br/>
+                  MESSAGE:${values.message},<br/>
+                  INTENDED LOCATION:${values.location}<br/>
+                  `,
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                    setSubmited((v) => ({ ...v, submited: true }));
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                    setSubmited((v) => ({ ...v, error: true }));
+                  });
+                setSubmitting(false);
+              }, 400);
+            }}
+          >
+            {({ isSubmitting }) => (
+              <Form className="flex flex-col justify-center items-center">
+                <Field
+                  type="text"
+                  name="name"
+                  class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
+                  placeholder="NAME"
+                />
+                <ErrorMessage name="name" component="div" />
 
-            <button className="bg-gray-900 rounded-full text-white w-52 h-16 m-10">
-              SEND
-            </button>
-          </div>
+                <Field
+                  type="email"
+                  name="email"
+                  class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
+                  placeholder="EMAIL"
+                />
+                <ErrorMessage name="email" component="div" />
+                <Field
+                  type="text"
+                  name="message"
+                  class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
+                  placeholder="MESSAGE"
+                />
+                <ErrorMessage name="message" component="div" />
+                <Field
+                  type="text"
+                  name="location"
+                  class="px-4 py-3 rounded-full max-w-2xl  w-full mt-4"
+                  placeholder="INTENDED LOCATION"
+                />
+                <ErrorMessage name="location" component="div" />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-gray-900 rounded-full text-white w-52 h-16 m-10"
+                >
+                  Submit
+                </button>
+                {submited.error && (
+                  <p className="text-red-700">
+                    someting went wrong! please try again 🙁
+                  </p>
+                )}
+                {submited.submited && (
+                  <p className="text-green-700">application submited 😄</p>
+                )}
+              </Form>
+            )}
+          </Formik>
         </div>
 
         <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-4 mt-36">
@@ -168,6 +229,15 @@ const Products = ({ dimensions }) => {
           </div>
         </div>
 
+        <a
+          className="flex justify-center m-20 cursor-pointer"
+          href="/franchise-details.pdf"
+        >
+          <span className="font-semibold text-lg">Franchise start up cost</span>
+
+          <img src="/file.svg" width={30} alt="" className="ml-1" />
+        </a>
+
         <div className="w-full text-center my-16">
           <p>📩info@ashaanfoods.in</p>
           <p>🌐www.ashaanfoods.in</p>
@@ -182,3 +252,21 @@ const Products = ({ dimensions }) => {
 };
 
 export default Products;
+
+async function postData(url, data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "no-cors", // no-cors, *cors, same-origin
+    // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    // credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    // redirect: "follow", // manual, *follow, error
+    // referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  });
+  return response; // parses JSON response into native JavaScript objects
+}

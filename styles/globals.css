@@ -18,3 +18,24 @@
 .cup {
   width: 37rem;
 }
+
+.bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transition: linear 2s, transform 0.2s;
+}
+/* .bubble {
+  animation: xMovement 0.5s infinite;
+  animation-direction: alternate;
+} */
+
+@keyframes xMovement {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100px;
+  }
+}

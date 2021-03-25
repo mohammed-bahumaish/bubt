@@ -26,7 +26,7 @@ export default function Home({ dimensions }) {
   });
   const [introExited, setintroExited] = useState(false);
   const [step, setStep] = useState(0);
-  const [showHeader, setShowHeader] = useState(true);
+  // const [showHeader, setShowHeader] = useState(true);
   const [loaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -36,9 +36,9 @@ export default function Home({ dimensions }) {
     const interval = setInterval(() => {
       pushBubble({
         quantity: 2,
-        duration: 7,
+        duration: 2,
       });
-    }, 1500);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -78,7 +78,7 @@ export default function Home({ dimensions }) {
         if (a == 1) {
           setStep((v) => {
             setTransation({ ...transitions, previousStep: v, nextStep: v + 1 });
-            setShowHeader(false);
+            // setShowHeader(false);
 
             return v;
           });
@@ -91,7 +91,7 @@ export default function Home({ dimensions }) {
         } else if (a == -1) {
           setStep((v) => {
             setTransation({ ...transitions, previousStep: v, nextStep: v - 1 });
-            setShowHeader(true);
+            // setShowHeader(true);
 
             return v;
           });
@@ -108,6 +108,7 @@ export default function Home({ dimensions }) {
     )
   );
   if (!loaded) return <p>loading</p>;
+
   return (
     <div
       className="overflow-hidden block relative m-0 p-0 z-0"

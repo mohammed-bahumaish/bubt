@@ -38,7 +38,7 @@ const Bubble = ({ props: { x, y, duration, color = "white" } }) => {
   );
 };
 
-const BubleMemoized = memo(Bubble);
+// const BubleMemoized = memo(Bubble);
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -48,23 +48,26 @@ function getRandomInt(min, max) {
 
 export const pushBubble = ({ quantity, duration, color }) => {
   for (let index = 0; index < quantity; index++) {
-    const bub = document.createElement("div");
+    let bub = document.createElement("div");
     const container = document.getElementById("container");
-    container?.appendChild(bub);
-    ReactDom.render(
-      <BubleMemoized
-        props={{
-          x: innerWidth * Math.random(),
-          y: scrollY + innerHeight + 100,
-          duration,
-          color,
-        }}
-      />,
-      bub
-    );
-    setTimeout(() => {
-      bub?.remove();
-    }, getRandomInt(2000, 4000));
+    if (container) {
+      container.appendChild(bub);
+      ReactDom.render(
+        <Bubble
+          props={{
+            x: innerWidth * Math.random(),
+            y: scrollY + innerHeight + 100,
+            duration,
+            color,
+          }}
+        />,
+        bub
+      );
+      setTimeout(() => {
+        bub.remove();
+        bub = null;
+      }, getRandomInt(2000, 4000));
+    }
   }
 };
 

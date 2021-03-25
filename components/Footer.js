@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import { durations } from "../pages/index";
 import Link from "next/link";
+import { memo, useState } from "react";
+import axios from "axios";
 
 const FruitFizz = ({ step, transitions }) => {
+  const [email, setEmail] = useState("");
+  const [submited, setSubmited] = useState({ submited: false, error: false });
+
   return (
     <motion.div
       className="h-full w-full flex justify-center items-center flex-col"
@@ -86,7 +91,7 @@ const FruitFizz = ({ step, transitions }) => {
           key="Footer4"
         >
           <p className="mb-3 text-lg font-bold">
-            subscribe to out newsletter. you can always be up to date with our
+            subscribe to our newsletter. you can always be up to date with our
             ashaanfood news!
           </p>
           <div className="flex w-96 h-10">
@@ -96,15 +101,42 @@ const FruitFizz = ({ step, transitions }) => {
               id="email"
               class="rounded-full  w-full"
               placeholder="EMAIL"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <button className="bg-gray-900 rounded-full text-white w-52  ml-3 font-bold uppercase">
+            <button
+              className="bg-gray-900 rounded-full text-white w-52  ml-3 font-bold uppercase"
+              onClick={async () => {
+                await axios
+                  .post("https://bubt-ashaanfood.vercel.app/api/sendgrid", {
+                    subject: "new letter subscription",
+                    text: `
+               EMAIL:${email}
+               `,
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                    setSubmited((v) => ({ ...v, submited: true }));
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                    setSubmited((v) => ({ ...v, error: true }));
+                  });
+              }}
+            >
               subscribe
             </button>
           </div>
+          {submited.error && (
+            <p className="text-red-700">
+              someting went wrong! please try again 🙁
+            </p>
+          )}
+          {submited.submited && <p className="text-green-700">submited 😄</p>}
         </motion.div>
       </div>
     </motion.div>
   );
 };
 
-export default FruitFizz;
+export default memo(FruitFizz);

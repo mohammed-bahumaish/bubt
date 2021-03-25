@@ -1,6 +1,6 @@
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { durations } from "../pages/index";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 
 const Intro = ({ step, transitions, introExited, setintroExited }) => {
   const [typeStep, nextType] = useCycle(1, 2, 3, 4, 5, 6);
@@ -181,7 +181,7 @@ const Intro = ({ step, transitions, introExited, setintroExited }) => {
   );
 };
 
-export default Intro;
+export default memo(Intro);
 
 const Type = ({ url, title }) => {
   return (

@@ -1,6 +1,6 @@
 import { motion, useCycle } from "framer-motion";
 import { durations } from "../pages/index";
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 
 const WonderShake = ({ step, transitions }) => {
   const [typeStep, nextType] = useCycle(1, 2, 3, 4, 5);
@@ -85,7 +85,7 @@ const WonderShake = ({ step, transitions }) => {
   );
 };
 
-export default WonderShake;
+export default memo(WonderShake);
 
 const Type = ({ url, title }) => {
   return (

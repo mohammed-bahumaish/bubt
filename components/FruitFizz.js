@@ -1,5 +1,5 @@
 import { motion, useCycle } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 import { durations } from "../pages/index";
 
 const FruitFizz = ({ transitions }) => {
@@ -86,7 +86,7 @@ const FruitFizz = ({ transitions }) => {
   );
 };
 
-export default FruitFizz;
+export default memo(FruitFizz);
 
 const Type = ({ url, title }) => {
   return (

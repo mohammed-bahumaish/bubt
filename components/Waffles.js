@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { durations } from "../pages/index";
+import { memo } from "react";
 
 const Waffles = ({ step, transitions }) => {
   return (
@@ -76,4 +77,4 @@ const Waffles = ({ step, transitions }) => {
   );
 };
 
-export default Waffles;
+export default memo(Waffles);

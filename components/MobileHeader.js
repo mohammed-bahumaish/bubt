@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, memo } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,7 +90,7 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);
 
 export const MenuToggle = ({ toggle }) => (
   <button
