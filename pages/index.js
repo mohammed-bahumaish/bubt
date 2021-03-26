@@ -33,14 +33,13 @@ export default function Home({ dimensions }) {
     _window.current = window;
     fastBubs();
 
-    const interval = setInterval(() => {
+    setTimeout(() => {
       pushBubble({
-        quantity: 2,
-        duration: 2,
+        quantity: 10,
+        duration: 6,
+        repeat: true,
       });
-    }, 2000);
-
-    return () => clearInterval(interval);
+    }, 1000);
   }, []);
   function handleEvent(e) {
     if (["ArrowDown", "ArrowRight"].includes(e.code) && step < 7) {

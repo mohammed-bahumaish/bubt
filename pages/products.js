@@ -12,14 +12,14 @@ const Products = ({ dimensions }) => {
 
   useEffect(() => {
     _window.current = window;
-    const interval = setInterval(() => {
-      pushBubble({
-        quantity: 2,
-        duration: 7,
-        color: "#7FBD26",
-      });
-    }, 1500);
-    return () => clearInterval(interval);
+    // setTimeout(() => {
+    //   pushBubble({
+    //     quantity: 10,
+    //     duration: 6,
+    //     // repeat: true,
+    //     color: "#7FBD26",
+    //   });
+    // }, 1000);
   }, []);
 
   function handleEvent(e) {
@@ -48,7 +48,7 @@ const Products = ({ dimensions }) => {
   );
 
   return (
-    <div id="container">
+    <div id="container" className="overflow-hidden block relative m-0 p-0 z-0">
       {dimensions.width > 768 ? <Header show={showHeader} /> : <MobileHeader />}
       <Head>
         <title>BUB-T by ASHAAN FOODS - Products</title>

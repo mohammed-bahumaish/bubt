@@ -5,7 +5,9 @@ import clamp from "lodash/clamp";
 import throttle from "lodash/throttle";
 import ReactDom from "react-dom";
 
-const Bubble = ({ props: { x, y, duration, color = "white" } }) => {
+const Bubble = ({
+  props: { x, y, duration, color = "white", repeat = false },
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -24,6 +26,7 @@ const Bubble = ({ props: { x, y, duration, color = "white" } }) => {
           transition: {
             ease: "linear",
             duration: duration * clamp(Math.random(), 0.5, 1),
+            repeat: repeat ? Infinity : 0,
           },
         }}
         className=" bottom-0 h-0 "
@@ -46,7 +49,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-export const pushBubble = ({ quantity, duration, color }) => {
+export const pushBubble = ({ quantity, duration, color, repeat = false }) => {
   for (let index = 0; index < quantity; index++) {
     let bub = document.createElement("div");
     const container = document.getElementById("container");
@@ -59,14 +62,17 @@ export const pushBubble = ({ quantity, duration, color }) => {
             y: scrollY + innerHeight + 100,
             duration,
             color,
+            repeat,
           }}
         />,
         bub
       );
-      setTimeout(() => {
-        bub.remove();
-        bub = null;
-      }, getRandomInt(2000, 4000));
+      if (!repeat) {
+        setTimeout(() => {
+          bub.remove();
+          bub = null;
+        }, getRandomInt(2000, 4000));
+      }
     }
   }
 };

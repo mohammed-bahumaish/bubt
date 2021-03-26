@@ -37,13 +37,13 @@ export default function Home({ dimensions }) {
     _window.current = window;
     fastBubs();
 
-    const interval = setInterval(() => {
+    setTimeout(() => {
       pushBubble({
-        quantity: 2,
-        duration: 7,
+        quantity: 10,
+        duration: 6,
+        repeat: true,
       });
-    }, 1500);
-    return () => clearInterval(interval);
+    }, 1000);
   }, []);
 
   scrollYProgress.onChange((v) => {
