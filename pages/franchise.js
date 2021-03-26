@@ -49,7 +49,7 @@ const Products = ({ dimensions }) => {
         <title>BUB-T by ASHAAN FOODS - Franchise</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="mt-56 m-10 overflow-hidden">
+      <div className="mt-56 m-4 overflow-hidden">
         <div className="text-center text-5xl uppercase relative ">
           <p className="z-30">be part</p>
           <p className="z-30">of our</p>
@@ -230,10 +230,12 @@ const Products = ({ dimensions }) => {
         </div>
 
         <a
-          className="flex justify-center m-20 cursor-pointer"
+          className="flex justify-center md:m-20 cursor-pointer"
           href="/franchise-details.pdf"
         >
-          <span className="font-semibold text-lg">Franchise start up cost</span>
+          <span className="font-semibold md:text-lg text-sm">
+            Franchise start up cost
+          </span>
 
           <img src="/file.svg" width={30} alt="" className="ml-1" />
         </a>
@@ -241,7 +243,7 @@ const Products = ({ dimensions }) => {
         <div className="w-full text-center my-16">
           <p>📩info@ashaanfoods.in</p>
           <p>🌐www.ashaanfoods.in</p>
-          <p>📞+918884422885</p>
+          <p>📞+917406743743</p>
           <p className="text-xl font-semibold mt-3">
             Team "BUB-T" @ Ashaan Foods.
           </p>
